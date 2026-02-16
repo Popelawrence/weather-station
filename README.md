@@ -1,16 +1,26 @@
-# React + Vite
+🌿 Botanical Weather Station & Monitoring Dashboard
+A modern React application designed to bridge the gap between meteorological data and botanical research. This tool performs real-time data transformation on weather API responses to provide ecological insights and 24-hour climate trends.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+🚀 Technical Highlights
+Modern Frontend Stack: Built using React 19, Vite, and Recharts for high-performance data visualization.
 
-Currently, two official plugins are available:
+Client-Side ETL: Implemented data transformation logic to map complex, nested JSON from OpenWeatherMap into flat time-series objects for trend analysis.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Domain-Driven Logic: Developed a Botanical Insight module that applies scientific logic (temperature/humidity thresholds) to real-time data to assist in specimen monitoring.
 
-## React Compiler
+CI/CD Pipeline: Configured GitHub Actions for automated build verification and continuous integration.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Secrets Management: Orchestrated secure environment variable handling using .env for local development and cloud-based secrets for deployment.
 
-## Expanding the ESLint configuration
+🛠️ Components
+SearchBar.jsx: Handles user input and triggers asynchronous API calls.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+WeatherCard.jsx: Displays current conditions with dynamic CSS that responds to the weather state.
+
+WeatherChart.jsx: A data-viz component showing the 24-hour temperature trend using SVG-based charting.
+
+BotanicalInsight.jsx: Provides researcher-focused notes based on ecological thresholds.
+![alt text](image.png)
+
+🧪 Scientific Application
+This project was built with a focus on Ecological Forecasting. By monitoring variables like humidity and temperature trends, researchers can predict periods of high fungal risk or thermal stress in tropical plant specimens.

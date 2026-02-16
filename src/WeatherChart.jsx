@@ -1,8 +1,9 @@
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 
-function WeatherChart({ data }) {
-  // If there's no data yet, don't render anything
+function WeatherChart({ data, unit }) {
   if (!data || data.length === 0) return null;
+
+  const symbol = unit === 'metric' ? '°C' : '°F';
 
   return (
     <div className="chart-container">
@@ -20,12 +21,13 @@ function WeatherChart({ data }) {
             <YAxis 
               stroke="white" 
               fontSize={12} 
-              unit="°"
+              unit={symbol} 
               tick={{fill: 'white'}}
             />
             <Tooltip 
               contentStyle={{ backgroundColor: '#333', border: 'none', borderRadius: '8px', color: 'white' }}
               itemStyle={{ color: '#ff9a9e' }}
+              formatter={(value) => [`${value}${symbol}`, 'Temperature']}
             />
             <Line 
               type="monotone" 
@@ -34,6 +36,12 @@ function WeatherChart({ data }) {
               strokeWidth={3} 
               dot={{ r: 4, fill: '#ff9a9e' }} 
               activeDot={{ r: 8 }}
+              
+              /* Animation Props */
+              isAnimationActive={true} // Enables animation
+              animationBegin={0}        // Delay in milliseconds
+              animationDuration={1500}  // Speed of the "growth"
+              animationEasing="ease-in-out" // Smooth start and end
             />
           </LineChart>
         </ResponsiveContainer>

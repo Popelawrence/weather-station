@@ -50,5 +50,27 @@ button {
   border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
+.unit-controls {
+  margin-bottom: 20px;
+  display: flex;
+  gap: 10px;
+}
+
+.unit-controls button {
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid white;
+  color: white;
+  padding: 5px 15px;
+  cursor: pointer;
+  border-radius: 20px;
+  transition: 0.3s;
+}
+
+.unit-controls button.active {
+  background: white;
+  color: #4facfe;
+}
+
 .temp { font-size: 3rem; font-weight: bold; margin: 10px 0; }
 .error { color: #ffd1d1; font-weight: bold; }
+
